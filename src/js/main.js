@@ -170,10 +170,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const monthlyBtn = document.getElementById("monthly-btn");
-    const annualBtn = document.getElementById("annual-btn");
+  const monthlyBtn = document.getElementById("monthly-btn");
+  const annualBtn = document.getElementById("annual-btn");
 
+  // Перевірка наявності елементів перед додаванням слухачів
+  if (monthlyBtn) {
     monthlyBtn.addEventListener("click", () => {
       currentPeriod = "monthly";
       monthlyBtn.classList.add("bg-primary", "text-white");
@@ -182,7 +183,9 @@ document.addEventListener("DOMContentLoaded", () => {
       annualBtn.classList.add("text-gray-700");
       updatePrices("monthly");
     });
+  }
 
+  if (annualBtn) {
     annualBtn.addEventListener("click", () => {
       currentPeriod = "annual";
       annualBtn.classList.add("bg-primary", "text-white");
@@ -191,11 +194,18 @@ document.addEventListener("DOMContentLoaded", () => {
       monthlyBtn.classList.add("text-gray-700");
       updatePrices("annual");
     });
+  }
 
-    // Ініціалізація на завантаженні
-    switchLanguage(currentLanguage);
-    updatePrices(currentPeriod);
+  // Обробники для кнопок перемикання мови
+  document.querySelectorAll(".lang-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      switchLanguage(btn.getAttribute("data-lang"));
+    });
   });
+
+  // Ініціалізація на завантаженні
+  switchLanguage(currentLanguage); // Ініціалізувати мову
+  updatePrices(currentPeriod); // Ініціалізувати ціни
 });
 // achievements-chart-script
 document.addEventListener("DOMContentLoaded", function () {
