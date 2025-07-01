@@ -71,6 +71,9 @@ function switchLanguage(lang) {
 
   document.documentElement.setAttribute("lang", lang);
   console.log("Language switched to:", lang);
+  if (typeof window.updateEchartsLanguage === 'function') {
+      window.updateEchartsLanguage(lang); // Викликаємо функцію оновлення діаграми
+  }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -209,125 +212,162 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 // achievements-chart-script
 document.addEventListener("DOMContentLoaded", function () {
-  const chartContainer = document.getElementById("achievements-chart");
-  if (chartContainer) {
-    const chart = echarts.init(chartContainer);
+    const chartContainer = document.getElementById("achievements-chart");
+    let chartInstance = null; // Буде зберігати екземпляр діаграми ECharts
 
-    const option = {
-      animation: false,
-      tooltip: {
-        trigger: "axis",
-        backgroundColor: "rgba(255, 255, 255, 0.8)",
-        borderColor: "#ccc",
-        borderWidth: 1,
-        textStyle: {
-          color: "#1f2937",
+    // 1. Об'єкт з перекладами для ECharts
+    const echartsTranslations = {
+        en: {
+            members: "Members",
+            events: "Events",
+            tooltipMembers: "Members", // Спеціально для тултіпа
+            tooltipEvents: "Events"    // Спеціально для тултіпа
         },
-      },
-      grid: {
-        top: 10,
-        right: 10,
-        bottom: 30,
-        left: 60,
-      },
-      xAxis: {
-        type: "category",
-        data: ["2019", "2020", "2021", "2022", "2023", "2024"],
-        axisLine: {
-          lineStyle: {
-            color: "#ddd",
-          },
-        },
-        axisLabel: {
-          color: "#1f2937",
-        },
-      },
-      yAxis: {
-        type: "value",
-        axisLine: {
-          lineStyle: {
-            color: "#ddd",
-          },
-        },
-        axisLabel: {
-          color: "#1f2937",
-        },
-        splitLine: {
-          lineStyle: {
-            color: "#eee",
-          },
-        },
-      },
-      series: [
-        {
-          name: "Members",
-          type: "line",
-          smooth: true,
-          data: [120, 180, 240, 320, 420, 500],
-          lineStyle: {
-            width: 3,
-            color: "rgba(87, 181, 231, 1)",
-          },
-          symbol: "none",
-          areaStyle: {
-            color: {
-              type: "linear",
-              x: 0,
-              y: 0,
-              x2: 0,
-              y2: 1,
-              colorStops: [
-                {
-                  offset: 0,
-                  color: "rgba(87, 181, 231, 0.2)",
-                },
-                {
-                  offset: 1,
-                  color: "rgba(87, 181, 231, 0.05)",
-                },
-              ],
-            },
-          },
-        },
-        {
-          name: "Events",
-          type: "line",
-          smooth: true,
-          data: [30, 40, 60, 90, 150, 250],
-          lineStyle: {
-            width: 3,
-            color: "rgba(141, 211, 199, 1)",
-          },
-          symbol: "none",
-          areaStyle: {
-            color: {
-              type: "linear",
-              x: 0,
-              y: 0,
-              x2: 0,
-              y2: 1,
-              colorStops: [
-                {
-                  offset: 0,
-                  color: "rgba(141, 211, 199, 0.2)",
-                },
-                {
-                  offset: 1,
-                  color: "rgba(141, 211, 199, 0.05)",
-                },
-              ],
-            },
-          },
-        },
-      ],
+        uk: {
+            members: "Учасники",
+            events: "Події",
+            tooltipMembers: "Учасники", // Спеціально для тултіпа
+            tooltipEvents: "Події"    // Спеціально для тултіпа
+        }
     };
 
-    chart.setOption(option);
+    /**
+     * Функція для оновлення діаграми ECharts відповідно до обраної мови.
+     * Цю функцію буде викликати ваша основна функція `switchLanguage`.
+     * @param {string} langCode - Код мови ('en' або 'uk').
+     */
+    window.updateEchartsLanguage = function(langCode) {
+        // Вибираємо відповідні переклади для поточної мови
+        const currentLangData = echartsTranslations[langCode] || echartsTranslations.en; // Використовуємо 'en' як запасний варіант
 
-    window.addEventListener("resize", function () {
-      chart.resize();
-    });
-  }
+        // Налаштування опцій діаграми
+        const option = {
+            animation: false,
+            tooltip: {
+                trigger: "axis",
+                backgroundColor: "rgba(255, 255, 255, 0.8)",
+                borderColor: "#ccc",
+                borderWidth: 1,
+                textStyle: {
+                    color: "#1f2937",
+                },
+                // Функція для форматування підказки (tooltip)
+                formatter: function (params) {
+                    let res = params[0].name + "<br/>";
+                    params.forEach(function (item) {
+                        let translatedSeriesName = item.seriesName;
+                        // Перевіряємо оригінальну назву серії і замінюємо її перекладеним текстом для підказки
+                        if (item.seriesName === echartsTranslations.en.members || item.seriesName === echartsTranslations.uk.members) {
+                            translatedSeriesName = currentLangData.tooltipMembers;
+                        } else if (item.seriesName === echartsTranslations.en.events || item.seriesName === echartsTranslations.uk.events) {
+                            translatedSeriesName = currentLangData.tooltipEvents;
+                        }
+                        res += item.marker + translatedSeriesName + ": " + item.value + "<br/>";
+                    });
+                    return res;
+                },
+            },
+            grid: {
+                top: 10,
+                right: 10,
+                bottom: 30,
+                left: 60,
+            },
+            xAxis: {
+                type: "category",
+                data: ["2019", "2020", "2021", "2022", "2023", "2024"],
+                axisLine: {
+                    lineStyle: {
+                        color: "#ddd",
+                    },
+                },
+                axisLabel: {
+                    color: "#1f2937",
+                },
+            },
+            yAxis: {
+                type: "value",
+                axisLine: {
+                    lineStyle: {
+                        color: "#ddd",
+                    },
+                },
+                axisLabel: {
+                    color: "#1f2937",
+                },
+                splitLine: {
+                    lineStyle: {
+                        color: "#eee",
+                    },
+                },
+            },
+            series: [
+                {
+                    name: currentLangData.members, // Тут буде перекладена назва для легенди
+                    type: "line",
+                    smooth: true,
+                    data: [120, 180, 240, 320, 420, 500],
+                    lineStyle: {
+                        width: 3,
+                        color: "rgba(87, 181, 231, 1)",
+                    },
+                    symbol: "none",
+                    areaStyle: {
+                        color: {
+                            type: "linear",
+                            x: 0,
+                            y: 0,
+                            x2: 0,
+                            y2: 1,
+                            colorStops: [
+                                { offset: 0, color: "rgba(87, 181, 231, 0.2)" },
+                                { offset: 1, color: "rgba(87, 181, 231, 0.05)" },
+                            ],
+                        },
+                    },
+                },
+                {
+                    name: currentLangData.events, // Тут буде перекладена назва для легенди
+                    type: "line",
+                    smooth: true,
+                    data: [30, 40, 60, 90, 150, 250],
+                    lineStyle: {
+                        width: 3,
+                        color: "rgba(141, 211, 199, 1)",
+                    },
+                    symbol: "none",
+                    areaStyle: {
+                        color: {
+                            type: "linear",
+                            x: 0,
+                            y: 0,
+                            x2: 0,
+                            y2: 1,
+                            colorStops: [
+                                { offset: 0, color: "rgba(141, 211, 199, 0.2)" },
+                                { offset: 1, color: "rgba(141, 211, 199, 0.05)" },
+                            ],
+                        },
+                    },
+                },
+            ],
+        };
+
+        if (!chartContainer) {
+            console.error("Контейнер для діаграми з ID 'achievements-chart' не знайдено.");
+            return;
+        }
+
+        if (!chartInstance) {
+            chartInstance = echarts.init(chartContainer);
+            window.addEventListener("resize", function () {
+                chartInstance.resize();
+            });
+        }
+        chartInstance.setOption(option, true); // `true` для повного оновлення діаграми
+    };
+    const initialLanguage = localStorage.getItem("language") || "uk";
+    window.updateEchartsLanguage(initialLanguage);
 });
 
 // modal
