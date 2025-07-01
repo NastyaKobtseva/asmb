@@ -125,4 +125,12 @@ body {
             .counter {
                 font-size: 1.6rem !important;
             }
+            .pricing__content {
+                margin-bottom: 30px !important;
+            }
+        }
+        @media (max-width: 356px) {
+            .monthly-year {
+                font-size: 13px !important;
+            }
         }

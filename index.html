@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/css/intlTelInput.css" />
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/main.min.css">
 </head>
 <body class="bg-white">
     <div id="preloader">
@@ -205,7 +205,7 @@
     <!-- Membership Section -->
     <section id="membership" class="section partners bg-gray-50">
         <div class="mycontainer mx-auto px-4">
-            <div class="text-center mb-16">
+            <div class="text-center mb-16 pricing__content">
                 <h2 class="text-4xl font-bold text-gray-800 mb-4" data-en="Our Members" data-uk="Наші члени">Our Members</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto" 
                 data-en="Join a network of over 500 businesses that trust SMBA to represent their interests and support their growth."
@@ -282,7 +282,7 @@
     <!-- Who is it for Section -->
     <section id="who" class="section partners bg-white">
         <div class="mycontainer mx-auto px-4">
-            <div class="text-center mb-16">
+            <div class="text-center mb-16 pricing__content">
                 <h2 class="text-4xl font-bold text-gray-800 mb-4" data-en="Who is it for?" data-uk="Для кого це?">Who is it for?</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto" 
                 data-en="SMBA membership is designed for businesses of all sizes and stages, providing tailored support for your specific needs."
@@ -380,7 +380,7 @@
     <!-- Pricing Section -->
     <section id="pricing" class="section partners bg-gray-50">
         <div class="mycontainer mx-auto px-4">
-            <div class="text-center mb-16">
+            <div class="text-center mb-16 pricing__content">
                 <h2 class="text-4xl font-bold text-gray-800 mb-4" data-en="Membership Plans" data-uk="Плани членства">Membership Plans</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto" 
                 data-en="Choose the membership level that best fits your business needs and goals."
@@ -390,9 +390,9 @@
                 
                 <div class="flex justify-center mt-8">
                     <div class="flex items-center bg-white rounded-full p-1 shadow-sm">
-                        <button id="monthly-btn" class="px-6 py-2 rounded-full bg-primary text-white font-medium" 
+                        <button id="monthly-btn" class="monthly-year px-6 py-2 rounded-full bg-primary text-white font-medium" 
                                 data-en="Monthly" data-uk="Щомісячно">Monthly</button>
-                        <button id="annual-btn" class="px-6 py-2 rounded-full text-gray-700 font-medium" 
+                        <button id="annual-btn" class="px-6 py-2 rounded-full text-gray-700 monthly-year font-medium" 
                                 data-en="Annual (Save 15%)" data-uk="Річний (економія 15%)">Annual (Save 15%)</button>
                     </div>
                 </div>
@@ -548,7 +548,7 @@
     <!-- Benefits Section -->
     <section id="benefits" class="section partners bg-white">
         <div class="mycontainer mx-auto px-4">
-            <div class="text-center mb-16">
+            <div class="text-center mb-16 pricing__content">
                 <h2 class="text-4xl font-bold text-gray-800 mb-4" 
                 data-en="With Us You Get" 
                 data-uk="З нами ви отримуєте">
@@ -664,7 +664,7 @@
     <!-- How to Join Section -->
     <section id="join" class="section partners bg-gray-50">
         <div class="mycontainer mx-auto px-4">
-            <div class="text-center mb-16">
+            <div class="text-center mb-16 pricing__content">
                 <h2 class="text-4xl font-bold text-gray-800 mb-4"
                     data-en="How to Join"
                     data-uk="Як приєднатися">
@@ -768,7 +768,7 @@
     <!-- Achievements Section -->
     <section id="achievements" class="section partners bg-white">
         <div class="mycontainer mx-auto px-4">
-            <div class="text-center mb-16">
+            <div class="text-center mb-16 pricing__content">
                 <h2 class="text-4xl font-bold text-gray-800 mb-4"
                     data-en="Our Achievements"
                     data-uk="Наші досягнення">
@@ -942,7 +942,7 @@
     <!-- Events Section -->
     <section id="events" class="section partners bg-gray-50">
         <div class="mycontainer mx-auto px-4">
-            <div class="text-center mb-16">
+            <div class="text-center mb-16 pricing__content">
                 <h2 class="text-4xl font-bold text-gray-800 mb-4"
                     data-en="Upcoming Events"
                     data-uk="Майбутні події">
@@ -1106,7 +1106,7 @@
     <!-- Contacts Section -->
     <section id="contacts" class="section partners bg-white p-[30px]">
         <div class="mycontainer mx-auto px-4">
-            <div class="text-center mb-16">
+            <div class="text-center mb-16 pricing__content">
                 <h2 class="text-4xl font-bold text-gray-800 mb-4"
                     data-en="Contact Us"
                     data-uk="Зв’яжіться з нами">
@@ -1804,232 +1804,6 @@
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
-    <script id="navigation-script">
-        document.addEventListener('DOMContentLoaded', function() {
-            const sections = document.querySelectorAll('.section');
-            const navDots = document.querySelectorAll('.nav-dot');
-
-            window.addEventListener('scroll', function() {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
-                current = section.getAttribute('id');
-                }
-            });
-
-            navDots.forEach(dot => {
-                dot.classList.remove('active');
-                if (dot.getAttribute('href').substring(1) === current) {
-                dot.classList.add('active');
-                }
-            });
-            });
-        });
-    </script>
-    <script id="pricing-toggle-script">
-        let currentLanguage = localStorage.getItem('language') || 'uk';
-        let currentPeriod = 'monthly';
-
-        function switchLanguage(lang) {
-        currentLanguage = lang;
-        localStorage.setItem('language', lang);
-
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
-        });
-
-        // Оновити тексти з data-en/data-uk
-        document.querySelectorAll('[data-en][data-uk]').forEach(el => {
-            el.innerHTML = el.getAttribute(`data-${lang}`);
-        });
-
-        // Оновити атрибути
-        const attrs = ['placeholder', 'value', 'aria-label', 'title'];
-        attrs.forEach(attr => {
-            document.querySelectorAll(`[data-${lang}-${attr}]`).forEach(el => {
-            el.setAttribute(attr, el.getAttribute(`data-${lang}-${attr}`));
-            });
-        });
-
-        document.documentElement.setAttribute('lang', lang);
-
-        // Оновити періодні підписи
-        updatePeriodLabelsLanguage();
-
-        // Оновити ціну з правильним періодом
-        updatePrices(currentPeriod);
-        }
-
-        function updatePeriodLabelsLanguage() {
-        document.querySelectorAll('.period-label').forEach(label => {
-            label.textContent = label.getAttribute(`data-${currentLanguage}`);
-        });
-        }
-
-        function updatePrices(period) {
-        const prices = document.querySelectorAll('.price');
-        prices.forEach(priceEl => {
-            const monthly = priceEl.dataset.monthly;
-            const annual = priceEl.dataset.annual;
-
-            // Оновлюємо числову частину без затирання span
-            priceEl.childNodes[0].textContent = `$${period === 'monthly' ? monthly : annual}`;
-
-            // Показуємо/ховаємо потрібний періодний лейбл
-            priceEl.querySelectorAll('.period-label').forEach(label => {
-            if (label.classList.contains('month-label')) {
-                label.style.display = period === 'monthly' ? 'inline' : 'none';
-            } else if (label.classList.contains('year-label')) {
-                label.style.display = period === 'annual' ? 'inline' : 'none';
-            }
-            });
-        });
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-        const monthlyBtn = document.getElementById('monthly-btn');
-        const annualBtn = document.getElementById('annual-btn');
-
-        monthlyBtn.addEventListener('click', () => {
-            currentPeriod = 'monthly';
-            monthlyBtn.classList.add('bg-primary', 'text-white');
-            monthlyBtn.classList.remove('text-gray-700');
-            annualBtn.classList.remove('bg-primary', 'text-white');
-            annualBtn.classList.add('text-gray-700');
-            updatePrices('monthly');
-        });
-
-        annualBtn.addEventListener('click', () => {
-            currentPeriod = 'annual';
-            annualBtn.classList.add('bg-primary', 'text-white');
-            annualBtn.classList.remove('text-gray-700');
-            monthlyBtn.classList.remove('bg-primary', 'text-white');
-            monthlyBtn.classList.add('text-gray-700');
-            updatePrices('annual');
-        });
-
-        // Ініціалізація на завантаженні
-        switchLanguage(currentLanguage);
-        updatePrices(currentPeriod);
-        });
-
-
-    </script>
-    <script id="achievements-chart-script">
-        document.addEventListener('DOMContentLoaded', function() {
-            const chartContainer = document.getElementById('achievements-chart');
-            if (chartContainer) {
-                const chart = echarts.init(chartContainer);
-                
-                const option = {
-                    animation: false,
-                    tooltip: {
-                        trigger: 'axis',
-                        backgroundColor: 'rgba(255, 255, 255, 0.8)',
-                        borderColor: '#ccc',
-                        borderWidth: 1,
-                        textStyle: {
-                            color: '#1f2937'
-                        }
-                    },
-                    grid: {
-                        top: 10,
-                        right: 10,
-                        bottom: 30,
-                        left: 60
-                    },
-                    xAxis: {
-                        type: 'category',
-                        data: ['2019', '2020', '2021', '2022', '2023', '2024'],
-                        axisLine: {
-                            lineStyle: {
-                                color: '#ddd'
-                            }
-                        },
-                        axisLabel: {
-                            color: '#1f2937'
-                        }
-                    },
-                    yAxis: {
-                        type: 'value',
-                        axisLine: {
-                            lineStyle: {
-                                color: '#ddd'
-                            }
-                        },
-                        axisLabel: {
-                            color: '#1f2937'
-                        },
-                        splitLine: {
-                            lineStyle: {
-                                color: '#eee'
-                            }
-                        }
-                    },
-                    series: [
-                        {
-                            name: 'Members',
-                            type: 'line',
-                            smooth: true,
-                            data: [120, 180, 240, 320, 420, 500],
-                            lineStyle: {
-                                width: 3,
-                                color: 'rgba(87, 181, 231, 1)'
-                            },
-                            symbol: 'none',
-                            areaStyle: {
-                                color: {
-                                    type: 'linear',
-                                    x: 0,
-                                    y: 0,
-                                    x2: 0,
-                                    y2: 1,
-                                    colorStops: [{
-                                        offset: 0, color: 'rgba(87, 181, 231, 0.2)'
-                                    }, {
-                                        offset: 1, color: 'rgba(87, 181, 231, 0.05)'
-                                    }]
-                                }
-                            }
-                        },
-                        {
-                            name: 'Events',
-                            type: 'line',
-                            smooth: true,
-                            data: [30, 40, 60, 90, 150, 250],
-                            lineStyle: {
-                                width: 3,
-                                color: 'rgba(141, 211, 199, 1)'
-                            },
-                            symbol: 'none',
-                            areaStyle: {
-                                color: {
-                                    type: 'linear',
-                                    x: 0,
-                                    y: 0,
-                                    x2: 0,
-                                    y2: 1,
-                                    colorStops: [{
-                                        offset: 0, color: 'rgba(141, 211, 199, 0.2)'
-                                    }, {
-                                        offset: 1, color: 'rgba(141, 211, 199, 0.05)'
-                                    }]
-                                }
-                            }
-                        }
-                    ]
-                };
-                
-                chart.setOption(option);
-                
-                window.addEventListener('resize', function() {
-                    chart.resize();
-                });
-            }
-        });
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/validator@13.11.0/validator.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/intlTelInput.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/utils.js"></script>
