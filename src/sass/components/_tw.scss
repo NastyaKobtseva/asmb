@@ -1,0 +1,128 @@
+body {
+            overflow-x: hidden;
+        }
+        .section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        .nav-dot {
+            transition: all 0.3s ease;
+        }
+        .nav-dot.active {
+            transform: scale(1.5);
+            background-color: #1e40af;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #1e40af;
+        }
+        .custom-checkbox {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #d1d5db;
+            border-radius: 4px;
+            position: relative;
+            cursor: pointer;
+        }
+        .custom-checkbox:checked {
+            background-color: #1e40af;
+            border-color: #1e40af;
+        }
+        .custom-checkbox:checked::after {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 2px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+        .custom-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        .custom-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 24px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #1e40af;
+        }
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+        .counter {
+            transition: all 0.3s ease;
+        }
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .member-logo {
+            filter: grayscale(100%);
+            transition: all 0.3s ease;
+        }
+        .member-logo:hover {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+        .section.partners {
+            min-height: 0;
+            padding: 70px 0;
+        }
+        @media (max-width: 1024px) {
+            .section.partners {
+                padding: 50px 0;
+            }
+        }
+        @media (max-width: 768px) {
+            .section.partners {
+                padding: 30px 0;
+            }
+            .counter {
+                font-size: 1.6rem !important;
+            }
+        }

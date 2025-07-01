@@ -1,0 +1,27 @@
+.home {
+    background-image: url("../src/image/home/bg-home.webp");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.arrow-home {
+    position: absolute;
+    bottom: -70px;
+} 
+@media (max-width: 768px) {
+    .home {
+        background-image: url("../src/image/home/bg-home-mobile.webp");
+    }
+    .arrow-home {
+        bottom: -20px;
+    }
+    .transcript {
+        padding: 74px 0 0 0;
+        font-size: 40px !important;
+    }
+}
+@media (max-width: 414px) {
+    .arrow-home {
+        bottom: 0;
+    }
+}
