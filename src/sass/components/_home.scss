@@ -8,6 +8,12 @@
     position: absolute;
     bottom: -70px;
 } 
+.btn-join {
+    transition: transform .5s linear !important;
+    &:hover {
+        transform: scale(.98) !important;
+    }
+}
 @media (max-width: 768px) {
     .home {
         background-image: url("../src/image/home/bg-home-mobile.webp");

@@ -331,6 +331,13 @@ a {
   bottom: -70px;
 }
 
+.btn-join {
+  transition: transform 0.5s linear !important;
+}
+.btn-join:hover {
+  transform: scale(0.98) !important;
+}
+
 @media (max-width: 768px) {
   .home {
     background-image: url("../src/image/home/bg-home-mobile.webp");
