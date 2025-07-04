@@ -459,22 +459,20 @@ document.addEventListener("DOMContentLoaded", () => {
         );
       }
       const phoneInput = form.querySelector('[name="phone"]');
+      const itiPhone = window.intlTelInputGlobals.getInstance(phoneInput);
       const phoneValue = phoneInput.value.trim();
-      if (!validator.isEmpty(phoneValue)) {
-        const onlyDigits = phoneValue.replace(/\D/g, "");
 
-        if (onlyDigits.length !== 9) {
-          errors.push(
-            lang === "uk"
-              ? "Номер телефону має містити 9 цифр"
-              : "Phone number must contain 9 digits"
-          );
-        }
-      } else {
+      if (validator.isEmpty(phoneValue)) {
         errors.push(
           lang === "uk"
             ? "Поле телефону є обов'язковим"
             : "Phone field is required"
+        );
+      } else if (!itiPhone.isValidNumber()) {
+        errors.push(
+          lang === "uk"
+            ? "Невірний номер телефону"
+            : "Invalid phone number"
         );
       }
 
@@ -531,13 +529,16 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll('input[name="phone"]').forEach((input) => {
     window.intlTelInput(input, {
-      initialCountry: "ua",
-      preferredCountries: ["ua"],
-      separateDialCode: true,
-      showFlags: true,
-      utilsScript:
-        "https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/utils.js",
-    });
+    initialCountry: "auto",
+    geoIpLookup: function(callback) {
+      fetch('https://ipinfo.io/json?token=YOUR_TOKEN')
+        .then(resp => resp.json())
+        .then(resp => callback(resp.country.toLowerCase()))
+        .catch(() => callback('ua'));
+    },
+    separateDialCode: true,
+    utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/utils.js",
+  });
   });
 });
 
