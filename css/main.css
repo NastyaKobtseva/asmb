@@ -210,7 +210,7 @@ a {
   display: none;
 }
 
-@media (max-width: 1091px) {
+@media (max-width: 1112px) {
   .desktop-only {
     display: none !important;
   }
