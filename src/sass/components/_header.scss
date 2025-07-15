@@ -154,8 +154,19 @@
   background: rgb(28, 58, 157);
   color: white;
 }
-
+.desktop-only {
+  display: block;
+}
+.mobile-only {
+  display: none;
+}
 @media (max-width: 1091px) {
+  .desktop-only {
+    display: none !important;
+  }
+  .mobile-only {
+    display: block !important;
+  }
   .hamburger {
     display: block;
     position: relative;
@@ -243,6 +254,7 @@
   .submenu {
     position: static;
     display: flex !important;
+    // display: none;
     flex-direction: column;
     gap: 5px;
     background-color: transparent;
