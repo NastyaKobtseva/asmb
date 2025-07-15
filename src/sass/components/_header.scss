@@ -249,7 +249,6 @@
     box-shadow: none;
     border-radius: 0;
   }
-
   .submenu__link {
     color: #000;
     padding: 6px 0;
@@ -262,6 +261,11 @@
   .submenu__link:hover {
     background: transparent;
     color: rgb(142, 174, 249);
+  }
+  .no-scroll {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
   }
 }
 
