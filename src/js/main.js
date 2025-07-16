@@ -19,17 +19,14 @@ const closeIcon = document.querySelector(".closeIcon");
 const menuIcon = document.querySelector(".menuIcon");
 
 function toggleMenu() {
-  const body = document.body;
   if (menu.classList.contains("showNavigation")) {
     menu.classList.remove("showNavigation");
     closeIcon.style.display = "none";
     menuIcon.style.display = "block";
-    body.classList.remove("no-scroll");
   } else {
     menu.classList.add("showNavigation");
     closeIcon.style.display = "block";
     menuIcon.style.display = "none";
-    body.classList.add("no-scroll");
   }
 }
 
