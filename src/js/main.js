@@ -10,7 +10,19 @@
 //     });
 //   }
 // });
+document.addEventListener("DOMContentLoaded", () => {
+  const preloader = document.getElementById("preloader");
 
+  if (preloader) {
+    setTimeout(() => {
+      preloader.classList.add("hidden");
+
+      preloader.addEventListener("transitionend", () => {
+        preloader.style.display = "none";
+      });
+    }, 200);
+  }
+});
 // burger menu
 const menu = document.querySelector(".navigation");
 const menuItems = document.querySelectorAll(".menu__link");
@@ -672,34 +684,34 @@ function step() {
 step();
 
 // animation
-// const sections = document.querySelectorAll("section");
+const sections = document.querySelectorAll("section");
 
-// const observer = new IntersectionObserver(
-//   (entries) => {
-//     entries.forEach((entry) => {
-//       if (entry.isIntersecting) {
-//         entry.target.classList.add("visible");
-//       }
-//     });
-//   },
-//   {
-//     threshold: 0.1,
-//   }
-// );
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  },
+  {
+    threshold: 0.1,
+  }
+);
 
-// sections.forEach((section, index) => {
-//   if (!section.closest("header") && !section.closest("footer")) {
-//     section.classList.add("section-animate");
+sections.forEach((section, index) => {
+  if (!section.closest("header") && !section.closest("footer")) {
+    section.classList.add("section-animate");
 
-//     if (index === 0) {
-//       setTimeout(() => {
-//         section.classList.add("first-visible");
-//       }, 200);
-//     } else {
-//       observer.observe(section);
-//     }
-//   }
-// });
+    if (index === 0) {
+      setTimeout(() => {
+        section.classList.add("first-visible");
+      }, 200);
+    } else {
+      observer.observe(section);
+    }
+  }
+});
 
 // timer
 document.addEventListener("DOMContentLoaded", () => {
