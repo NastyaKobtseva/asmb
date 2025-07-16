@@ -1,15 +1,15 @@
 // preloader
-window.addEventListener("load", () => {
-  const preloader = document.getElementById("preloader");
+// window.addEventListener("load", () => {
+//   const preloader = document.getElementById("preloader");
 
-  if (preloader) {
-    preloader.classList.add("hidden");
+//   if (preloader) {
+//     preloader.classList.add("hidden");
 
-    preloader.addEventListener("transitionend", () => {
-      preloader.style.display = "none";
-    });
-  }
-});
+//     preloader.addEventListener("transitionend", () => {
+//       preloader.style.display = "none";
+//     });
+//   }
+// });
 
 // burger menu
 const menu = document.querySelector(".navigation");
