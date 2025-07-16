@@ -1,15 +1,4 @@
 // preloader
-// window.addEventListener("load", () => {
-//   const preloader = document.getElementById("preloader");
-
-//   if (preloader) {
-//     preloader.classList.add("hidden");
-
-//     preloader.addEventListener("transitionend", () => {
-//       preloader.style.display = "none";
-//     });
-//   }
-// });
 document.addEventListener("DOMContentLoaded", () => {
   const preloader = document.getElementById("preloader");
 
@@ -20,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
       preloader.addEventListener("transitionend", () => {
         preloader.style.display = "none";
       });
-    }, 200);
+    }, 130);
   }
 });
 // burger menu
@@ -706,7 +695,7 @@ sections.forEach((section, index) => {
     if (index === 0) {
       setTimeout(() => {
         section.classList.add("first-visible");
-      }, 200);
+      }, 100);
     } else {
       observer.observe(section);
     }
