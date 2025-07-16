@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
       preloader.addEventListener("transitionend", () => {
         preloader.style.display = "none";
       });
-    }, 130);
+    }, 200);
   }
 });
 // burger menu
@@ -695,7 +695,7 @@ sections.forEach((section, index) => {
     if (index === 0) {
       setTimeout(() => {
         section.classList.add("first-visible");
-      }, 100);
+      }, 200);
     } else {
       observer.observe(section);
     }
