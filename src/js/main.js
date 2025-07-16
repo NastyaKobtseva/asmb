@@ -1,5 +1,17 @@
 // preloader
+// window.addEventListener("load", () => {
+//   const preloader = document.getElementById("preloader");
+
+//   if (preloader) {
+//     preloader.classList.add("hidden");
+
+//     preloader.addEventListener("transitionend", () => {
+//       preloader.style.display = "none";
+//     });
+//   }
+// });
 window.addEventListener("load", () => {
+  document.body.classList.remove("loading");
   const preloader = document.getElementById("preloader");
 
   if (preloader) {
