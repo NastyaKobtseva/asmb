@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./src/image/header/logo-up.svg"> 
-    <title>ASMB</title>
+    <link rel="canonical" href="https://asmb.com.ua" />
+    <title>АМСБ — Асоціація малого та середнього бізнесу України</title>
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
     <script>tailwind.config={theme:{extend:{colors:{primary:'#1e40af',secondary:'#f59e0b'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
@@ -14,6 +16,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/css/intlTelInput.css" />
     <link rel="stylesheet" href="./css/main.min.css">
+
+    <meta name="description" content="Асоціація малого та середнього бізнесу — об’єднуємо підприємців в Україні для підтримки та розвитку бізнесу." />
+    
+    <meta property="og:title" content="АМСБ — Асоціація малого та середнього бізнесу України" />
+    <meta property="og:description" content="Об’єднуємо підприємців в Україні для підтримки та розвитку бізнесу." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://asmb.com.ua" />
+    <meta property="og:image" content="https://asmb.com.ua/src/image/header/logo-up-png.png" />
+    <meta property="og:locale" content="uk_UA" />
+    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="АМСБ — Асоціація малого та середнього бізнесу України" />
+    <meta name="twitter:description" content="Об’єднуємо підприємців в Україні для підтримки та розвитку бізнесу." />
+    <meta name="twitter:image" content="https://asmb.com.ua/src/image/header/logo-up-png.png" />
+
+    <meta property="og:site_name" content="АМСБ" />
 </head>
 <body class="bg-white loading">
     <div id="preloader">
@@ -32,20 +50,20 @@
                     ASMB
                 </p>
             </a>
-            <nav class="navigation">
+            <nav class="navigation" role="navigation" aria-label="Головне меню сайту">
                 <ul class="menu">
                     <li class="menu__item"><a href="#home" class="menu__link" data-uk="Головна" data-en="Home">Головна</a></li>
                     <li class="menu__item"><a href="#mission" class="menu__link" data-uk="Мета" data-en="Mission">Мета</a></li>
                     <li class="menu__item"><a href="#membership" class="menu__link" data-uk="Членство" data-en="Membership">Членство</a></li>
                     <li class="menu__item menu__item--has-submenu desktop-only">
-                        <a href="#" class="menu__link submenu-toggle" data-uk='Переваги та умови &lt;svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" style="margin-left: 6px; vertical-align: middle;"&gt;&lt;path d="M0 0l5 6 5-6z" fill="currentColor"/&gt;&lt;/svg&gt;'
+                        <a href="#" aria-haspopup="true" aria-expanded="false" aria-controls="submenu-benefits" class="menu__link submenu-toggle" data-uk='Переваги та умови &lt;svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" style="margin-left: 6px; vertical-align: middle;"&gt;&lt;path d="M0 0l5 6 5-6z" fill="currentColor"/&gt;&lt;/svg&gt;'
                             data-en='Benefits and Conditions &lt;svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" style="margin-left: 6px; vertical-align: middle;"&gt;&lt;path d="M0 0l5 6 5-6z" fill="currentColor"/&gt;&lt;/svg&gt;'>
                             Переваги та умови
                             <svg class="submenu-arrow" xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" style="margin-left: 6px; vertical-align: middle;">
                                 <path d="M0 0l5 6 5-6z" fill="currentColor"/>
                             </svg>
                         </a>
-                        <ul class="submenu">
+                        <ul class="submenu" id="submenu-benefits" aria-label="Переваги та умови">
                             <li><a href="#who" class="submenu__link menu__link" data-uk="Для кого це" data-en="Who is it for">Для кого це</a></li>
                             <li><a href="#pricing" class="submenu__link menu__link" data-uk="Тарифи" data-en="Tariffs">Тарифи</a></li>                        
                             <li><a href="#benefits" class="submenu__link menu__link" data-uk="З нами ти отримаєш" data-en="What You Get With Us">З нами ти отримаєш</a></li>  
@@ -69,7 +87,7 @@
                     Приєднатися до АМСБ
                 </button>
             </nav>
-            <button class="hamburger">
+            <button class="hamburger" aria-label="Відкрити меню">
                 <i class="menuIcon material-icons">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
@@ -81,60 +99,62 @@
     </header>
 
     <!-- Navigation Dots -->
-    <div class="fixed right-6 top-1/2 transform -translate-y-1/2 z-40 hidden md:block">
+    <div class="fixed right-6 top-1/2 transform -translate-y-1/2 z-40 hidden md:block" role="navigation" aria-label="Навігація по секціях">
         <div class="flex flex-col space-y-4">
-            <a href="#home" class="nav-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-primary transition"></a>
-            <a href="#mission" class="nav-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-primary transition"></a>
-            <a href="#membership" class="nav-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-primary transition"></a>
-            <a href="#who" class="nav-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-primary transition"></a>
-            <a href="#pricing" class="nav-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-primary transition"></a>
-            <a href="#benefits" class="nav-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-primary transition"></a>
-            <a href="#join" class="nav-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-primary transition"></a>
-            <a href="#achievements" class="nav-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-primary transition"></a>
-            <a href="#events" class="nav-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-primary transition"></a>
-            <a href="#contacts" class="nav-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-primary transition"></a>
+            <a href="#home" class="nav-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-primary transition" aria-label="Головна"></a>
+            <a href="#mission" class="nav-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-primary transition" aria-label="Мета"></a>
+            <a href="#membership" class="nav-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-primary transition" aria-label="Членство"></a>
+            <a href="#who" class="nav-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-primary transition" aria-label="Для кого це"></a>
+            <a href="#pricing" class="nav-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-primary transition" aria-label="Тарифи"></a>
+            <a href="#benefits" class="nav-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-primary transition" aria-label="З нами ти отримаєш"></a>
+            <a href="#join" class="nav-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-primary transition" aria-label="Як вступити"></a>
+            <a href="#achievements" class="nav-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-primary transition" aria-label="Досягнення"></a>
+            <a href="#events" class="nav-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-primary transition" aria-label="Події"></a>
+            <a href="#contacts" class="nav-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-primary transition" aria-label="Контакти"></a>
         </div>
     </div>
 
     <!-- Home Section -->
-    <section id="home" class="section relative home first-visible">
+    <section id="home" class="section relative home first-visible" role="banner" aria-label="Головний банер сайту">
         <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-transparent"></div>
         <div class="mycontainer mx-auto px-4 z-10 w-full">
             <div class="max-w-2xl text-white">
-                <h1 class="text-5xl md:text-6xl font-bold mb-6 transcript" 
-                    data-en="Association of Small and Medium-Sized Businesses — Uniting Entrepreneurs in Ukraine" 
-                    data-uk="Асоціація малого та середнього бізнесу — об’єднуємо підприємців в Україні">
-                    Association of Small and Medium-Sized Businesses — Uniting Entrepreneurs in Ukraine
-                </h1>
-                <p class="text-xl mb-8" 
-                data-en="Join the leading association dedicated to supporting and advocating for small and medium enterprises across the country." 
+            <h1 lang="uk" class="text-5xl md:text-6xl font-bold mb-6 transcript"
+                data-en="Association of Small and Medium-Sized Businesses — Uniting Entrepreneurs in Ukraine"
+                data-uk="Асоціація малого та середнього бізнесу — об’єднуємо підприємців в Україні">
+                Асоціація малого та середнього бізнесу — об’єднуємо підприємців в Україні
+            </h1>
+            <p lang="uk" class="text-xl mb-8"
+                data-en="Join the leading association dedicated to supporting and advocating for small and medium enterprises across the country."
                 data-uk="Приєднуйтесь до провідної асоціації, яка підтримує та представляє інтереси малого та середнього бізнесу по всій країні.">
-                Join the leading association dedicated to supporting and advocating for small and medium enterprises across the country.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                   <button id="join-button-hero" data-target="modal2" class="open-modal btn-join bg-white text-primary px-8 py-3 !rounded-button font-bold hover:bg-gray-100 transition whitespace-nowrap"
-                        data-en="Join ASMB" data-uk="Приєднатись до АМСБ">
-                    Join ASMB
-                    </button>
-                    <a href="#mission">
-                        <button class="bg-transparent btn-join w-full border-2 border-white text-white px-8 py-3 !rounded-button font-bold hover:bg-white/10 transition whitespace-nowrap"
-                                data-en="Learn More" data-uk="Дізнатись більше">
-                            Learn More
-                        </button>
-                    </a>
-                </div>
-                
+                Приєднуйтесь до провідної асоціації, яка підтримує та представляє інтереси малого та середнього бізнесу по всій країні.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <button id="join-button-hero" data-target="modal2" class="open-modal btn-join bg-white text-primary px-8 py-3 !rounded-button font-bold hover:bg-gray-100 transition whitespace-nowrap"
+                    aria-label="Приєднатись до АМСБ"
+                    data-en="Join ASMB" data-uk="Приєднатись до АМСБ">
+                Приєднатись до АМСБ
+                </button>
+                <a href="#mission">
+                <button class="bg-transparent btn-join w-full border-2 border-white text-white px-8 py-3 !rounded-button font-bold hover:bg-white/10 transition whitespace-nowrap"
+                        aria-label="Дізнатись більше"
+                        data-en="Learn More" data-uk="Дізнатись більше">
+                    Дізнатись більше
+                </button>
+                </a>
+            </div>
             </div>
             <div class="mt-16 scroll-indicator">
-                <a href="#mission" class="flex justify-center items-center w-10 h-10 mx-auto">
-                    <i class="ri-arrow-down-line ri-xl text-white arrow-home"></i>
-                </a>
+            <a href="#mission" class="flex justify-center items-center w-10 h-10 mx-auto" aria-label="Перейти до секції Мета">
+                <i class="ri-arrow-down-line ri-xl text-white arrow-home"></i>
+            </a>
             </div>
         </div>
     </section>
 
+
     <!-- Mission Section -->
-    <section id="mission" class="section partners bg-white">
+    <section id="mission" class="section partners bg-white" aria-label="Наша місія"> 
         <div class="mycontainer mx-auto px-4">
             <div class="flex flex-col md:flex-row items-center gap-12">
                 <div class="md:w-1/2">
@@ -204,7 +224,7 @@
     </section>
 
     <!-- Membership Section -->
-    <section id="membership" class="section partners bg-gray-50">
+    <section id="membership" class="section partners bg-gray-50" aria-label="Інформація про членство">
         <div class="mycontainer mx-auto px-4">
             <div class="text-center mb-16 pricing__content">
                 <h2 class="text-4xl font-bold text-gray-800 mb-4" data-en="Our Members" data-uk="Наші члени">Our Members</h2>
@@ -281,7 +301,7 @@
     </section>
 
     <!-- Who is it for Section -->
-    <section id="who" class="section partners bg-white">
+    <section id="who" class="section partners bg-white" aria-label="Для кого це секція">
         <div class="mycontainer mx-auto px-4">
             <div class="text-center mb-16 pricing__content">
                 <h2 class="text-4xl font-bold text-gray-800 mb-4" data-en="Who is it for?" data-uk="Для кого це?">Who is it for?</h2>
@@ -379,7 +399,7 @@
     </section>
 
     <!-- Pricing Section -->
-    <section id="pricing" class="section partners bg-gray-50">
+    <section id="pricing" class="section partners bg-gray-50" aria-label="Інформація про тарифи">
         <div class="mycontainer mx-auto px-4">
             <div class="text-center mb-16 pricing__content">
                 <h2 class="text-4xl font-bold text-gray-800 mb-4" data-en="Membership Plans" data-uk="Плани членства">Membership Plans</h2>
@@ -547,7 +567,7 @@
     </section>
 
     <!-- Benefits Section -->
-    <section id="benefits" class="section partners bg-white">
+    <section id="benefits" class="section partners bg-white" aria-label="З нами ви отримуєте">
         <div class="mycontainer mx-auto px-4">
             <div class="text-center mb-16 pricing__content">
                 <h2 class="text-4xl font-bold text-gray-800 mb-4" 
@@ -663,7 +683,7 @@
     </section>
 
     <!-- How to Join Section -->
-    <section id="join" class="section partners bg-gray-50">
+    <section id="join" class="section partners bg-gray-50" aria-label="Як вступити до асоціації">
         <div class="mycontainer mx-auto px-4">
             <div class="text-center mb-16 pricing__content">
                 <h2 class="text-4xl font-bold text-gray-800 mb-4"
@@ -767,7 +787,7 @@
     </section>
 
     <!-- Achievements Section -->
-    <section id="achievements" class="section partners bg-white">
+    <section id="achievements" class="section partners bg-white" aria-label="Досягнення асоціації">
         <div class="mycontainer mx-auto px-4">
             <div class="text-center mb-16 pricing__content">
                 <h2 class="text-4xl font-bold text-gray-800 mb-4"
@@ -941,7 +961,7 @@
         </div>
     </section>
     <!-- Events Section -->
-    <section id="events" class="section partners bg-gray-50">
+    <section id="events" class="section partners bg-gray-50" aria-label="Події та заходи">
         <div class="mycontainer mx-auto px-4">
             <div class="text-center mb-16 pricing__content">
                 <h2 class="text-4xl font-bold text-gray-800 mb-4"
@@ -1118,7 +1138,7 @@
     </section>
 
     <!-- Contacts Section -->
-    <section id="contacts" class="section partners bg-white p-[30px]">
+    <section id="contacts" class="section partners bg-white p-[30px]" aria-label="Контактна інформація">
         <div class="mycontainer mx-auto px-4">
             <div class="text-center mb-16 pricing__content">
                 <h2 class="text-4xl font-bold text-gray-800 mb-4"
@@ -1270,7 +1290,7 @@
         </div>
     </section>
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="bg-gray-900 text-white py-12" aria-label="Підвал сайту">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                 <div>
@@ -1365,9 +1385,9 @@
     </footer>
 
     <!-- Join Modal -->
-    <div class="modal" id="modal1">
+    <div class="modal" id="modal1" role="dialog" aria-modal="true" aria-labelledby="modal1-title">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close" aria-label="Закрити">&times;</span>
             <form id="join-form" action="https://formspree.io/f/mzzggwdz" method="POST">
                 <div class="form-board">
                     <img src="./src/image/header/logo.svg" alt="АМСБ logo" class="form-board__logo" />
@@ -1455,9 +1475,9 @@
             </form>
         </div>
     </div>
-    <div class="modal" id="modal2">
+    <div class="modal" id="modal2" role="dialog" aria-modal="true" aria-labelledby="modal2-title">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close" aria-label="Закрити">&times;</span>
             <form id="join-form" action="https://formspree.io/f/mzzggwdz" method="POST">
                 <div class="form-board">
                     <img src="./src/image/header/logo.svg" alt="АМСБ logo" class="form-board__logo" />
@@ -1545,9 +1565,9 @@
             </form>
         </div>
     </div>
-    <div class="modal" id="modal3">
+    <div class="modal" id="modal3" role="dialog" aria-modal="true" aria-labelledby="modal3-title">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close" aria-label="Закрити">&times;</span>
             <form id="join-form" action="https://formspree.io/f/mzzggwdz" method="POST">
                 <div class="form-board">
                     <img src="./src/image/header/logo.svg" alt="АМСБ logo" class="form-board__logo" />
@@ -1635,9 +1655,9 @@
             </form>
         </div>
     </div>
-    <div class="modal" id="modal4">
+    <div class="modal" id="modal4" role="dialog" aria-modal="true" aria-labelledby="modal4-title">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close" aria-label="Закрити">&times;</span>
             <form id="join-form" action="https://formspree.io/f/mzzggwdz" method="POST">
                 <div class="form-board">
                     <img src="./src/image/header/logo.svg" alt="АМСБ logo" class="form-board__logo" />
@@ -1725,9 +1745,9 @@
             </form>
         </div>
     </div>
-    <div class="modal" id="modal5">
+    <div class="modal" id="modal5" role="dialog" aria-modal="true" aria-labelledby="modal5-title">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close" aria-label="Закрити">&times;</span>
            <form id="join-form" action="https://formspree.io/f/mzzggwdz" method="POST">
                 <div class="form-board">
                     <img src="./src/image/header/logo.svg" alt="АМСБ logo" class="form-board__logo" />
