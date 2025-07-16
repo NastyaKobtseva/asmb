@@ -10,18 +10,6 @@
 //     });
 //   }
 // });
-window.addEventListener("load", () => {
-  document.body.classList.remove("loading");
-  const preloader = document.getElementById("preloader");
-
-  if (preloader) {
-    preloader.classList.add("hidden");
-
-    preloader.addEventListener("transitionend", () => {
-      preloader.style.display = "none";
-    });
-  }
-});
 
 // burger menu
 const menu = document.querySelector(".navigation");
