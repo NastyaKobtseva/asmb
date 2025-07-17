@@ -6,6 +6,8 @@
     <link rel="shortcut icon" href="./src/image/header/logo-up.svg"> 
     <link rel="canonical" href="https://asmb.com.ua">
     <title>АМСБ — Асоціація малого та середнього бізнесу України</title>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
     <script>tailwind.config={theme:{extend:{colors:{primary:'#1e40af',secondary:'#f59e0b'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -86,7 +88,7 @@
                     <div class="language-switcher__line"></div>
                     <button class="lang-btn active" data-lang="en">EN</button>
                 </div>
-                <button class="navigation__btn open-modal" data-target="modal1" data-uk="Приєднатися до АМСБ" data-en="Join ASMB">
+                <button class="navigation__btn open-modal" data-target="mainModal" data-uk="Приєднатися до АМСБ" data-en="Join ASMB">
                     Приєднатися до АМСБ
                 </button>
             </nav>
@@ -118,22 +120,23 @@
     </div>
 
     <!-- Home Section -->
-    <section id="home" class="section relative home first-visible" role="banner" aria-label="Головний банер сайту">
+    <section id="home" class="section relative home first-visible relative overflow-hidden" role="banner" aria-label="Головний банер сайту">
+        <div id="particles-mission" class="absolute inset-0 z-0"></div>
         <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-transparent"></div>
-        <div class="mycontainer mx-auto px-4 z-10 w-full">
+        <div class="mycontainer mx-auto px-4 z-10 w-full relative z-10" data-aos="fade-up" data-aos-duration="800">
             <div class="max-w-2xl text-white">
-            <h1 lang="uk" class="text-5xl md:text-6xl font-bold mb-6 transcript"
+            <h1 data-aos="fade-right" data-aos-delay="100" lang="uk" class="text-5xl md:text-6xl font-bold mb-6 transcript"
                 data-en="Association of Small and Medium-Sized Businesses — Uniting Entrepreneurs in Ukraine"
                 data-uk="Асоціація малого та середнього бізнесу — об’єднуємо підприємців в Україні">
                 Асоціація малого та середнього бізнесу — об’єднуємо підприємців в Україні
             </h1>
-            <p lang="uk" class="text-xl mb-8"
+            <p data-aos="fade-right" data-aos-delay="200" lang="uk" class="text-xl mb-8"
                 data-en="Join the leading association dedicated to supporting and advocating for small and medium enterprises across the country."
                 data-uk="Приєднуйтесь до провідної асоціації, яка підтримує та представляє інтереси малого та середнього бізнесу по всій країні.">
                 Приєднуйтесь до провідної асоціації, яка підтримує та представляє інтереси малого та середнього бізнесу по всій країні.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4">
-                <button id="join-button-hero" data-target="modal2" class="open-modal btn-join bg-white text-primary px-8 py-3 !rounded-button font-bold hover:bg-gray-100 transition whitespace-nowrap"
+            <div class="flex flex-col sm:flex-row gap-4" data-aos="fade-right" data-aos-delay="300">
+                <button id="join-button-hero" data-target="mainModal" class="open-modal btn-join bg-white text-primary px-8 py-3 !rounded-button font-bold hover:bg-gray-100 transition whitespace-nowrap"
                     aria-label="Приєднатись до АМСБ"
                     data-en="Join ASMB" data-uk="Приєднатись до АМСБ">
                 Приєднатись до АМСБ
@@ -148,22 +151,22 @@
             </div>
             </div>
             <div class="mt-16 scroll-indicator">
-            <a href="#mission" class="flex justify-center items-center w-10 h-10 mx-auto" aria-label="Перейти до секції Мета">
-                <i class="ri-arrow-down-line ri-xl text-white arrow-home"></i>
-            </a>
+                <a href="#mission" class="flex justify-center items-center w-10 h-10 mx-auto" aria-label="Перейти до секції Мета">
+                    <i data-aos="fade-up" data-aos-delay="100" class="ri-arrow-down-line ri-xl text-white arrow-home"></i>
+                </a>
             </div>
         </div>
     </section>
 
 
     <!-- Mission Section -->
-    <section id="mission" class="section partners bg-white" aria-label="Наша місія"> 
-        <div class="mycontainer mx-auto px-4">
+    <section id="mission" class="section partners bg-white relative overflow-hidden" aria-label="Наша місія"> 
+        <div class="mycontainer mx-auto px-4 relative z-10" data-aos="fade-up" data-aos-duration="800">
             <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="md:w-1/2">
+                <div class="md:w-1/2" data-aos="fade-right" data-aos-delay="100">
                     <img src="./src/image/mission/mission-photo.webp" alt="Our Mission" class="rounded-lg shadow-xl w-full">
                 </div>
-                <div class="md:w-1/2">
+                <div class="md:w-1/2" data-aos="fade-left" data-aos-delay="200">
                     <h2 class="text-4xl font-bold text-gray-800 mb-6" 
                     data-en="Our Mission" data-uk="Наша місія">Our Mission</h2>
                     <p class="text-lg text-gray-600 mb-8"
@@ -228,13 +231,16 @@
 
     <!-- Membership Section -->
     <section id="membership" class="section partners bg-gray-50" aria-label="Інформація про членство">
-        <div class="mycontainer mx-auto px-4">
+        <div class="mycontainer mx-auto px-4" data-aos="fade-up" data-aos-duration="800">
             <div class="text-center mb-16 pricing__content">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4" data-en="Our Members" data-uk="Наші члени">Our Members</h2>
+                <h2 class="text-4xl font-bold text-gray-800 mb-4" 
+                    data-en="Our Members" data-uk="Наші члени">
+                    Our Members
+                </h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto" 
-                data-en="Join a network of over 500 businesses that trust ASMB to represent their interests and support their growth."
-                data-uk="Приєднуйтесь до мережі з понад 500 бізнесів, які довіряють АМСБ представляти їхні інтереси та підтримувати їхній розвиток.">
-                Join a network of over 500 businesses that trust ASMB to represent their interests and support their growth.
+                    data-en="Join a network of over 500 businesses that trust ASMB to represent their interests and support their growth."
+                    data-uk="Приєднуйтесь до мережі з понад 500 бізнесів, які довіряють АМСБ представляти їхні інтереси та підтримувати їхній розвиток.">
+                    Join a network of over 500 businesses that trust ASMB to represent their interests and support their growth.
                 </p>
             </div>
             
@@ -277,7 +283,7 @@
                             <img src="https://scsa.org.ua/wp-content/uploads/2022/08/nayda_logo.png" alt="nayda" loading="lazy">
                         </div>
                     </div>
-                </div>
+            </div>
             
             <div class="flex flex-col md:flex-row items-center justify-center gap-8 pt-[30px]">
                 <div class="flex items-center gap-8">
@@ -295,7 +301,7 @@
                     </div>
                 </div>
                 
-                <button id="join-button-membership" data-target="modal3" class="btn-join open-modal bg-primary text-white px-8 py-3 !rounded-button font-bold hover:bg-blue-800 transition whitespace-nowrap"
+                <button id="join-button-membership" data-target="mainModal" class="btn-join open-modal bg-primary text-white px-8 py-3 !rounded-button font-bold hover:bg-blue-800 transition whitespace-nowrap"
                         data-en="Become a Partner" data-uk="Стати партнером">
                     Become a Partner
                 </button>
@@ -305,13 +311,16 @@
 
     <!-- Who is it for Section -->
     <section id="who" class="section partners bg-white" aria-label="Для кого це секція">
-        <div class="mycontainer mx-auto px-4">
+        <div class="mycontainer mx-auto px-4" data-aos="fade-up" data-aos-duration="800">
             <div class="text-center mb-16 pricing__content">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4" data-en="Who is it for?" data-uk="Для кого це?">Who is it for?</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto" 
-                data-en="ASMB membership is designed for businesses of all sizes and stages, providing tailored support for your specific needs."
-                data-uk="Членство в АМСБ розроблене для бізнесів будь-якого розміру та стадії, забезпечуючи індивідуальну підтримку відповідно до ваших потреб.">
-                ASMB membership is designed for businesses of all sizes and stages, providing tailored support for your specific needs.
+                <h2 class="text-4xl font-bold text-gray-800 mb-4"
+                    data-en="Who is it for?" data-uk="Для кого це?">
+                    Who is it for?
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto"
+                    data-en="ASMB membership is designed for businesses of all sizes and stages, providing tailored support for your specific needs."
+                    data-uk="Членство в АМСБ розроблене для бізнесів будь-якого розміру та стадії, забезпечуючи індивідуальну підтримку відповідно до ваших потреб.">
+                    ASMB membership is designed for businesses of all sizes and stages, providing tailored support for your specific needs.
                 </p>
             </div>
             
@@ -393,7 +402,7 @@
             </div>
             
             <div class="text-center">
-                <button id="join-button-who" data-target="modal4" class="btn-join open-modal bg-primary text-white px-8 py-3 !rounded-button font-bold hover:bg-blue-800 transition whitespace-nowrap"
+                <button id="join-button-who" data-target="mainModal" class="btn-join open-modal bg-primary text-white px-8 py-3 !rounded-button font-bold hover:bg-blue-800 transition whitespace-nowrap"
                         data-en="Join ASMB" data-uk="Приєднатись до АМСБ">
                     Join ASMB
                 </button>
@@ -403,13 +412,16 @@
 
     <!-- Pricing Section -->
     <section id="pricing" class="section partners bg-gray-50" aria-label="Інформація про тарифи">
-        <div class="mycontainer mx-auto px-4">
+        <div class="mycontainer mx-auto px-4" data-aos="fade-up" data-aos-duration="800">
             <div class="text-center mb-16 pricing__content">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4" data-en="Membership Plans" data-uk="Плани членства">Membership Plans</h2>
+                <h2 class="text-4xl font-bold text-gray-800 mb-4" 
+                    data-en="Membership Plans" data-uk="Плани членства">
+                    Membership Plans
+                </h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto" 
-                data-en="Choose the membership level that best fits your business needs and goals."
-                data-uk="Виберіть рівень членства, який найкраще відповідає потребам і цілям вашого бізнесу.">
-                Choose the membership level that best fits your business needs and goals.
+                    data-en="Choose the membership level that best fits your business needs and goals."
+                    data-uk="Виберіть рівень членства, який найкраще відповідає потребам і цілям вашого бізнесу.">
+                    Choose the membership level that best fits your business needs and goals.
                 </p>
                 
                 <div class="flex justify-center mt-8">
@@ -569,9 +581,9 @@
         </div>
     </section>
 
-    <!-- Benefits Section -->
+    <!-- Benefits Section not animation -->
     <section id="benefits" class="section partners bg-white" aria-label="З нами ви отримуєте">
-        <div class="mycontainer mx-auto px-4">
+        <div class="mycontainer mx-auto px-4" data-aos="fade-up" data-aos-duration="800">
             <div class="text-center mb-16 pricing__content">
                 <h2 class="text-4xl font-bold text-gray-800 mb-4" 
                 data-en="With Us You Get" 
@@ -687,7 +699,7 @@
 
     <!-- How to Join Section -->
     <section id="join" class="section partners bg-gray-50" aria-label="Як вступити до асоціації">
-        <div class="mycontainer mx-auto px-4">
+        <div class="mycontainer mx-auto px-4" data-aos="fade-up" data-aos-duration="800">
             <div class="text-center mb-16 pricing__content">
                 <h2 class="text-4xl font-bold text-gray-800 mb-4"
                     data-en="How to Join"
@@ -779,7 +791,7 @@
                 </div>
                 
                 <div class="text-center mt-12">
-                    <button id="join-button-join" data-target="modal5" class="btn-join open-modal bg-primary text-white px-8 py-3 !rounded-button font-bold hover:bg-blue-800 transition whitespace-nowrap"
+                    <button id="join-button-join" data-target="mainModal" class="btn-join open-modal bg-primary text-white px-8 py-3 !rounded-button font-bold hover:bg-blue-800 transition whitespace-nowrap"
                         data-en="Join ASMB"
                         data-uk="Приєднатися до АМСБ">
                         Join ASMB
@@ -791,7 +803,7 @@
 
     <!-- Achievements Section -->
     <section id="achievements" class="section partners bg-white" aria-label="Досягнення асоціації">
-        <div class="mycontainer mx-auto px-4">
+        <div class="mycontainer mx-auto px-4" data-aos="fade-up" data-aos-duration="800">
             <div class="text-center mb-16 pricing__content">
                 <h2 class="text-4xl font-bold text-gray-800 mb-4"
                     data-en="Our Achievements"
@@ -806,9 +818,9 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-                <div>
+                <div data-aos="fade-up" data-aos-delay="150" data-aos-duration="700">
                     <div class="grid grid-cols-2 gap-8 mb-8">
-                        <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100 text-center">
+                        <div data-aos="zoom-in" data-aos-delay="200" class="bg-white p-6 rounded-lg shadow-md border border-gray-100 text-center">
                             <div class="text-4xl font-bold text-primary mb-2 counter">$25M+</div>
                             <p class="text-gray-600"
                             data-en="Funding secured for members"
@@ -816,7 +828,7 @@
                             Funding secured for members
                             </p>
                         </div>
-                        <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100 text-center">
+                        <div data-aos="zoom-in" data-aos-delay="300" class="bg-white p-6 rounded-lg shadow-md border border-gray-100 text-center">
                             <div class="text-4xl font-bold text-primary mb-2 counter">120+</div>
                             <p class="text-gray-600"
                             data-en="Policy changes influenced"
@@ -824,7 +836,7 @@
                             Policy changes influenced
                             </p>
                         </div>
-                        <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100 text-center">
+                        <div data-aos="zoom-in" data-aos-delay="400" class="bg-white p-6 rounded-lg shadow-md border border-gray-100 text-center">
                             <div class="text-4xl font-bold text-primary mb-2 counter">5000+</div>
                             <p class="text-gray-600"
                             data-en="Businesses supported"
@@ -832,7 +844,7 @@
                             Businesses supported
                             </p>
                         </div>
-                        <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100 text-center">
+                        <div data-aos="zoom-in" data-aos-delay="500" class="bg-white p-6 rounded-lg shadow-md border border-gray-100 text-center">
                             <div class="text-4xl font-bold text-primary mb-2 counter">250+</div>
                             <p class="text-gray-600"
                             data-en="Events organized"
@@ -842,7 +854,7 @@
                         </div>
                     </div>
                     
-                    <div class="bg-white p-8 rounded-lg shadow-md border border-gray-100">
+                    <div class="bg-white p-8 rounded-lg shadow-md border border-gray-100" data-aos="fade-up" data-aos-delay="600">
                         <h3 class="text-2xl font-bold text-gray-800 mb-4"
                             data-en="Success Stories"
                             data-uk="Історії успіху">
@@ -889,7 +901,7 @@
                     </div>
                 </div>
                 
-                <div>
+                <div data-aos="fade-left" data-aos-delay="300" data-aos-duration="700">
                     <div class="bg-white p-8 rounded-lg shadow-md border border-gray-100 h-full">
                         <h3 class="text-2xl font-bold text-gray-800 mb-6"
                             data-en="Impact Over Time"
@@ -901,7 +913,7 @@
                 </div>
             </div>
             
-            <div class="bg-primary/5 p-8 rounded-lg">
+            <div class="bg-primary/5 p-8 rounded-lg" data-aos="fade-up" data-aos-delay="700" data-aos-duration="700">
                 <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center"
                     data-en="Recognition & Awards"
                     data-uk="Визнання та нагороди">
@@ -965,7 +977,7 @@
     </section>
     <!-- Events Section -->
     <section id="events" class="section partners bg-gray-50" aria-label="Події та заходи">
-        <div class="mycontainer mx-auto px-4">
+        <div class="mycontainer mx-auto px-4" data-aos="fade-up" data-aos-duration="800">
             <div class="text-center mb-16 pricing__content">
                 <h2 class="text-4xl font-bold text-gray-800 mb-4"
                     data-en="Upcoming Events"
@@ -980,7 +992,7 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-                <div class="btn-join bg-white rounded-lg shadow-md overflow-hidden flex flex-col group relative">
+                <div data-aos="fade-up" data-aos-delay="100" class="btn-join bg-white rounded-lg shadow-md overflow-hidden flex flex-col group relative">
                     <div class="relative h-48 overflow-hidden">
                         <img src="./src/image/events/annual-business-summit.webp" alt="Annual Business Summit" class="w-full h-full object-cover filter brightness-75">
                         <div class="absolute bg-primary/40 inset-0 flex items-center justify-center">
@@ -1025,7 +1037,7 @@
                     </div>
                 </div>
 
-                <div class="btn-join bg-white rounded-lg shadow-md overflow-hidden flex flex-col group relative">
+                <div data-aos="fade-up" data-aos-delay="200" class="btn-join bg-white rounded-lg shadow-md overflow-hidden flex flex-col group relative">
                     <div class="relative h-48 overflow-hidden">
                         <img src="./src/image/events/digital-marketing-workshop.webp" alt="Digital Marketing Workshop" class="w-full h-full object-cover filter brightness-75">
                         <div class="absolute bg-primary/40 inset-0 flex items-center justify-center">
@@ -1070,7 +1082,7 @@
                     </div>
                 </div>
 
-                <div class="btn-join bg-white rounded-lg shadow-md overflow-hidden flex flex-col group relative">
+                <div data-aos="fade-up" data-aos-delay="300" class="btn-join bg-white rounded-lg shadow-md overflow-hidden flex flex-col group relative">
                     <div class="relative h-48 overflow-hidden">
                         <img src="./src/image/events/networking-mixer.webp" alt="Networking Mixer" class="w-full h-full object-cover filter brightness-75">
                         <div class="absolute bg-primary/40 inset-0 flex items-center justify-center">
@@ -1116,24 +1128,24 @@
                 </div>
             </div>
             
-            <div class="bg-white p-8 rounded-lg shadow-md">
+            <div class="bg-white p-8 rounded-lg shadow-md" data-aos="fade-up" data-aos-duration="800">
                 <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center"
                     data-en="Past Event Gallery"
                     data-uk="Галерея минулих подій">
                     Past Event Gallery
                 </h3>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div class="rounded-lg overflow-hidden h-40">
-                        <img src="https://readdy.ai/api/search-image?query=A%20professional%20business%20conference%20with%20speakers%20on%20stage%2C%20audience%20listening%20attentively%2C%20corporate%20setting%20with%20blue%20accents%2C%20professional%20business%20people%20in%20formal%20attire%2C%20clean%20modern%20conference%20hall%2C%20business%20event%20with%20presentation%20screens&width=400&height=300&seq=3&orientation=landscape" alt="Past Event" class="w-full h-full object-cover object-top">
+                    <div class="rounded-lg overflow-hidden h-40" data-aos="zoom-in" data-aos-delay="100">
+                        <img src="./src/image/events/past-events-photo4.webp" alt="Past Event" class="w-full h-full object-cover object-top">
                     </div>
-                    <div class="rounded-lg overflow-hidden h-40">
-                        <img src="https://readdy.ai/api/search-image?query=Business%20networking%20event%20with%20professionals%20exchanging%20business%20cards%2C%20corporate%20cocktail%20party%2C%20professional%20atmosphere%2C%20business%20casual%20attire%2C%20elegant%20venue%20with%20subtle%20lighting%2C%20focus%20on%20handshakes%20and%20conversations&width=400&height=300&seq=4&orientation=landscape" alt="Past Event" class="w-full h-full object-cover object-top">
+                    <div data-aos="zoom-in" data-aos-delay="200" class="rounded-lg overflow-hidden h-40">
+                        <img src="./src/image/events/past-events-photo3.webp" alt="Past Event" class="w-full h-full object-cover object-top">
                     </div>
-                    <div class="rounded-lg overflow-hidden h-40">
-                        <img src="https://readdy.ai/api/search-image?query=Business%20workshop%20with%20small%20groups%20working%20together%20at%20round%20tables%2C%20professional%20training%20environment%2C%20business%20casual%20attire%2C%20bright%20modern%20room%20with%20large%20windows%2C%20collaborative%20atmosphere%20with%20facilitators&width=400&height=300&seq=5&orientation=landscape" alt="Past Event" class="w-full h-full object-cover object-top">
+                    <div data-aos="zoom-in" data-aos-delay="300" class="rounded-lg overflow-hidden h-40">
+                        <img src="./src/image/events/past-events-photo2.webp" alt="Past Event" class="w-full h-full object-cover object-top">
                     </div>
-                    <div class="rounded-lg overflow-hidden h-40">
-                        <img src="https://readdy.ai/api/search-image?query=Award%20ceremony%20for%20business%20excellence%2C%20professional%20gala%20dinner%2C%20formal%20attire%2C%20elegant%20venue%20with%20blue%20decorative%20elements%2C%20trophy%20presentation%20on%20stage%2C%20applauding%20audience%20in%20formal%20business%20attire&width=400&height=300&seq=6&orientation=landscape" alt="Past Event" class="w-full h-full object-cover object-top">
+                    <div data-aos="zoom-in" data-aos-delay="400" class="rounded-lg overflow-hidden h-40">
+                        <img src="./src/image/events/past-events-photo1.webp" alt="Past Event" class="w-full h-full object-cover object-top">
                     </div>
                 </div>
             </div>
@@ -1142,8 +1154,8 @@
 
     <!-- Contacts Section -->
     <section id="contacts" class="section partners bg-white p-[30px]" aria-label="Контактна інформація">
-        <div class="mycontainer mx-auto px-4">
-            <div class="text-center mb-16 pricing__content">
+        <div class="mycontainer mx-auto px-4" data-aos="fade-up" data-aos-duration="800">
+            <div class="text-center mb-16 pricing__content" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
                 <h2 class="text-4xl font-bold text-gray-800 mb-4"
                     data-en="Contact Us"
                     data-uk="Зв’яжіться з нами">
@@ -1157,7 +1169,7 @@
             </div>
             
             <div class="flex flex-col md:flex-row gap-12">
-                <div class="md:w-1/2">
+                <div class="md:w-1/2" data-aos="fade-right" data-aos-delay="200" data-aos-duration="800">
                     <div class="bg-white p-8 rounded-lg shadow-md border border-gray-100 h-full">
                         <h3 class="text-2xl font-bold text-gray-800 mb-6"
                             data-en="Get in Touch"
@@ -1193,7 +1205,7 @@
                 </div>
                 
                 <div class="md:w-1/2">
-                    <div class="bg-white p-8 rounded-lg shadow-md border border-gray-100 mb-8">
+                    <div class="bg-white p-8 rounded-lg shadow-md border border-gray-100 mb-8" data-aos="fade-left" data-aos-delay="300" data-aos-duration="800">
                         <h3 class="text-2xl font-bold text-gray-800 mb-6"
                             data-en="Contact Information"
                             data-uk="Контактна інформація">
@@ -1208,13 +1220,13 @@
                                     <h4 class="font-semibold text-gray-800 mb-1"
                                     data-en="Main Office"
                                     data-uk="Головний офіс">Main Office</h4>
-                                    <a aria-label="123 Бізнес-авеню, Київ, 01001, Україна" href="https://www.google.com/maps/place/SMART+business/@50.4441484,30.4505611,17z/data=!3m1!4b1!4m6!3m5!1s0x40d4cdb68dfea8d3:0x8d42eb286c790b6b!8m2!3d50.444145!4d30.453136!16s%2Fg%2F1vg4h9r5?hl=en&entry=ttu&g_ep=EgoyMDI1MDYyNi4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-                                        <p class="text-gray-600" data-en="123 Business Avenue, Kyiv, 01001, Ukraine" data-uk="123 Бізнес-авеню, Київ, 01001, Україна">123 Business Avenue, Kyiv, 01001, Ukraine</p>
+                                    <a aria-label="123 Бізнес-авеню, Київ, 01001, Україна" href="https://www.google.com/maps/search/01024,+%D0%BC%D1%96%D1%81%D1%82%D0%BE+%D0%9A%D0%B8%D1%97%D0%B2,+%D0%B2%D1%83%D0%BB.+%D0%9A%D1%80%D1%83%D0%B3%D0%BB%D0%BE%D1%83%D0%BD%D1%96%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%82%D0%B5%D1%82%D1%81%D1%8C%D0%BA%D0%B0,+%D0%B1%D1%83%D0%B4%D0%B8%D0%BD%D0%BE%D0%BA+7,+%D0%BE%D1%84%D1%96%D1%81+27/@50.4429784,30.5220572,18z?entry=ttu&g_ep=EgoyMDI1MDcxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+                                        <p class="text-gray-600" data-en="Office 27, 7 Kruglouniversytetska St., Kyiv 01024, Ukraine" data-uk="01024, місто Київ, вул. Круглоуніверситетська, будинок 7, офіс 27">Office 27, 7 Kruglouniversytetska St., Kyiv 01024, Ukraine</p>
                                     </a>
                                 </div>
                             </div>
                             
-                            <div class="flex items-start">
+                            <!-- <div class="flex items-start">
                                 <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mr-4">
                                     <i class="ri-phone-line ri-lg text-primary"></i>
                                 </div>
@@ -1224,7 +1236,7 @@
                                     data-uk="Телефон">Phone</h4>
                                     <a aria-label="Телефонний номер +380 44 123 4567" href="tel:+380441234567" target="_blank" class="text-gray-600">+380 44 123 4567</a>
                                 </div>
-                            </div>
+                            </div> -->
                             
                             <div class="flex items-start">
                                 <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mr-4">
@@ -1274,18 +1286,21 @@
                                 <a aria-label="Instagram — Відкрити Instagram у новій вкладці" href="https://www.instagram.com/" target="_blank" class="btn-join w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full text-gray-600 hover:bg-primary hover:text-white transition">
                                     <i class="ri-instagram-fill"></i>
                                 </a>
+                                <a aria-label="Telegram — Відкрити Telegram у новій вкладці" href="https://t.me/BusiessBox11" target="_blank" class="btn-join w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full text-gray-600 hover:bg-primary hover:text-white transition">
+                                    <i class="ri-telegram-fill"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="bg-white p-8 rounded-lg shadow-md border border-gray-100 h-64 overflow-hidden">
+                    <div class="bg-white p-8 rounded-lg shadow-md border border-gray-100 h-64 overflow-hidden" data-aos="fade-left" data-aos-delay="400" data-aos-duration="800">
                         <h3 class="text-2xl font-bold text-gray-800 mb-4"
                             data-en="Our Location"
                             data-uk="Ми знаходимось тут">
                             Our Location
                         </h3>
                         <div class="w-full h-full rounded-lg overflow-hidden">
-                            <iframe class="w-full h-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.6742767865558!2d30.52075507659332!3d50.44716748760008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce56b05b5233%3A0x6c7a6290d6ccb471!2z0JDQutCw0LTQtdC80ZbRjyDQsdGW0LfQvdC10YHRgyBFWQ!5e0!3m2!1sen!2sua!4v1751354315057!5m2!1sen!2sua" style="border:0;" allowfullscreen="" loading="lazy" title="map" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <iframe class="w-full h-full" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d1270.4495943462673!2d30.522057198394783!3d50.44297840000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1zMDEwMjQsINC80ZbRgdGC0L4g0JrQuNGX0LIsINCy0YPQuy4g0JrRgNGD0LPQu9C-0YPQvdGW0LLQtdGA0YHQuNGC0LXRgtGB0YzQutCwLCDQsdGD0LTQuNC90L7QuiA3LCDQvtGE0ZbRgSAyNw!5e0!3m2!1sen!2sua!4v1752753332915!5m2!1sen!2sua" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
                 </div>
@@ -1294,7 +1309,7 @@
     </section>
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12" aria-label="Підвал сайту">
-        <div class="container mx-auto px-4">
+        <div class="container mx-auto px-4" data-aos="fade-left" data-aos-delay="400" data-aos-duration="800">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                 <div>
                     <h3 class="text-xl font-bold mb-4" data-en="About ASMB" data-uk="Про АМСБ">About ASMB</h3>
@@ -1402,369 +1417,9 @@
     </footer>
 
     <!-- Join Modal -->
-    <div class="modal" id="modal1" role="dialog" aria-modal="true">
+    <div class="modal" id="mainModal" role="dialog" aria-modal="true">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <form id="join-form" action="https://formspree.io/f/mzzggwdz" method="POST">
-                <div class="form-board">
-                    <img src="./src/image/header/logo.svg" alt="АМСБ logo" class="form-board__logo" />
-                    <h2 data-uk="Приєднатися до АМСБ" data-en="Join ASMB">Приєднатися до АМСБ</h2>
-                    <div class="form-board__radio-group">
-                        <div class="radio-cont">
-                            <input id="radio1" value="manager" type="radio" name="type" class="radio-manager" required/>
-                            <label for="radio1" class="radio-cont__text">
-                                <span class="form-board__cont-condition"
-                                        data-uk="Я найманий менеджер"
-                                        data-en="I am a hired manager">
-                                    Я найманий менеджер
-                                </span>
-                                <span data-uk="(готовий отримувати розсилку з цікавими матеріалами від АМСБ)"
-                                        data-en="(willing to receive useful updates from ASMB)">
-                                    (готовий отримувати розсилку з цікавими матеріалами від АМСБ)
-                                </span>
-                            </label>
-                        </div>
-                        <div class="radio-cont">
-                            <input id="radio2" value="owner" type="radio" name="type" class="radio-owner" />
-                            <label for="radio2" class="radio-cont__text">
-                                <span class="form-board__cont-condition"
-                                        data-uk="Я власник бізнесу"
-                                        data-en="I am a business owner">
-                                    Я власник бізнесу
-                                </span>
-                                <span data-uk="(зацікавлений у вступі до АМСБ і у мене є команда)"
-                                        data-en="(interested in joining the ASMB and I have a team)">
-                                    (зацікавлений у вступі до АМСБ і у мене є команда)
-                                </span>
-                            </label>
-                        </div>
-                    </div>
-                    <input id="name-input" type="text" autocomplete="name" name="name" placeholder="Ім’я та прізвище"
-                        data-uk-placeholder="Ім’я та прізвище"
-                        data-en-placeholder="Full Name" required />
-
-                    <input id="phone-input" type="tel" autocomplete="tel" name="phone" placeholder="Телефон"
-                        data-uk-placeholder="Телефон"
-                        data-en-placeholder="Phone Number" required />
-                    <select name="messenger" autocomplete="off" required>
-                        <option value="" disabled selected data-uk="Зручний месенджер для комунікації" data-en="Preferred messenger for communication">
-                            Зручний месенджер для комунікації
-                        </option>
-                        <option value="Telegram">Telegram</option>
-                        <option value="Viber">Viber</option>
-                        <option value="WhatsApp">WhatsApp</option>
-                    </select>
-                    <div class="employees-wrapper" style="display: none;">
-                        <select name="employees" autocomplete="off" required>
-                            <option disabled selected data-uk="Кількість найманих працівників" data-en="Number of employees">Кількість найманих працівників</option>
-                            <option value="1-9">1–9</option>
-                            <option value="10-50">10-50</option>
-                            <option value="50-100">50-100</option>
-                            <option value="100+">100+</option>
-                        </select>
-                    </div>
-                    <input id="email-input" type="email" autocomplete="email" name="email" placeholder="Email"
-                        data-en-placeholder="Email" required />
-
-                    <input id="company-input" type="text" name="company" autocomplete="organization" placeholder="Назва компанії"
-                        data-uk-placeholder="Назва компанії"
-                        data-en-placeholder="Company Name" required />
-
-                    <input id="city-input" type="text" name="city" autocomplete="address-level2" placeholder="Місто"
-                        data-uk-placeholder="Місто"
-                        data-en-placeholder="City" required/>
-
-                    <label class="form-board__checkbox">
-                        <input id="consent-checkbox" type="checkbox" name="consent" required />
-                        <span data-uk="Я надаю згоду на обробку своїх персональних даних або інших відомостей про себе на умовах, викладених у ЗГОДІ НА ЗБIР ТА ОБРОБКУ ПЕРСОНАЛЬНИХ ДАНИХ та погоджуюсь з умовами, викладеними у ПОЛІТИЦІ КОНФІДЕНЦІЙНОСТІ ТА ЗАХИСТУ ПЕРСОНАЛЬНИХ ДАНИХ"
-                                data-en="I consent to the processing of my personal data as outlined in the CONSENT FOR DATA COLLECTION and agree to the PRIVACY POLICY.">
-                            Я надаю згоду на обробку своїх персональних даних або інших відомостей про себе на умовах, викладених у ЗГОДІ НА ЗБIР ТА ОБРОБКУ ПЕРСОНАЛЬНИХ ДАНИХ та погоджуюсь з умовами, викладеними у ПОЛІТИЦІ КОНФІДЕНЦІЙНОСТІ ТА ЗАХИСТУ ПЕРСОНАЛЬНИХ ДАНИХ
-                        </span>
-                    </label>
-                        <button type="submit"
-                            data-uk="Подати заявку"
-                            data-en="Submit Application"
-                            data-uk-success="Заявка відправлена ✓"
-                            data-en-success="Application sent ✓">
-                        Подати заявку
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-    <div class="modal" id="modal2" role="dialog" aria-modal="true">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <form id="join-form" action="https://formspree.io/f/mzzggwdz" method="POST">
-                <div class="form-board">
-                    <img src="./src/image/header/logo.svg" alt="АМСБ logo" class="form-board__logo" />
-                    <h2 data-uk="Приєднатися до АМСБ" data-en="Join ASMB">Приєднатися до АМСБ</h2>
-                    <div class="form-board__radio-group">
-                        <div class="radio-cont">
-                            <input id="radio1" value="manager" type="radio" name="type" class="radio-manager" required/>
-                            <label for="radio1" class="radio-cont__text">
-                                <span class="form-board__cont-condition"
-                                        data-uk="Я найманий менеджер"
-                                        data-en="I am a hired manager">
-                                    Я найманий менеджер
-                                </span>
-                                <span data-uk="(готовий отримувати розсилку з цікавими матеріалами від АМСБ)"
-                                        data-en="(willing to receive useful updates from ASMB)">
-                                    (готовий отримувати розсилку з цікавими матеріалами від АМСБ)
-                                </span>
-                            </label>
-                        </div>
-                        <div class="radio-cont">
-                            <input id="radio2" value="owner" type="radio" name="type" class="radio-owner" />
-                            <label for="radio2" class="radio-cont__text">
-                                <span class="form-board__cont-condition"
-                                        data-uk="Я власник бізнесу"
-                                        data-en="I am a business owner">
-                                    Я власник бізнесу
-                                </span>
-                                <span data-uk="(зацікавлений у вступі до АМСБ і у мене є команда)"
-                                        data-en="(interested in joining the ASMB and I have a team)">
-                                    (зацікавлений у вступі до АМСБ і у мене є команда)
-                                </span>
-                            </label>
-                        </div>
-                    </div>
-                    <input id="name-input" type="text" autocomplete="name" name="name" placeholder="Ім’я та прізвище"
-                        data-uk-placeholder="Ім’я та прізвище"
-                        data-en-placeholder="Full Name" required />
-
-                    <input id="phone-input" type="tel" autocomplete="tel" name="phone" placeholder="Телефон"
-                        data-uk-placeholder="Телефон"
-                        data-en-placeholder="Phone Number" required />
-                    <select name="messenger" autocomplete="off" required>
-                        <option value="" disabled selected data-uk="Зручний месенджер для комунікації" data-en="Preferred messenger for communication">
-                            Зручний месенджер для комунікації
-                        </option>
-                        <option value="Telegram">Telegram</option>
-                        <option value="Viber">Viber</option>
-                        <option value="WhatsApp">WhatsApp</option>
-                    </select>
-                    <div class="employees-wrapper" style="display: none;">
-                        <select name="employees" autocomplete="off" required>
-                            <option disabled selected data-uk="Кількість найманих працівників" data-en="Number of employees">Кількість найманих працівників</option>
-                            <option value="1-9">1–9</option>
-                            <option value="10-50">10-50</option>
-                            <option value="50-100">50-100</option>
-                            <option value="100+">100+</option>
-                        </select>
-                    </div>
-                    <input id="email-input" type="email" autocomplete="email" name="email" placeholder="Email"
-                        data-en-placeholder="Email" required />
-
-                    <input id="company-input" type="text" name="company" autocomplete="organization" placeholder="Назва компанії"
-                        data-uk-placeholder="Назва компанії"
-                        data-en-placeholder="Company Name" required />
-
-                    <input id="city-input" type="text" name="city" autocomplete="address-level2" placeholder="Місто"
-                        data-uk-placeholder="Місто"
-                        data-en-placeholder="City" required/>
-
-                    <label class="form-board__checkbox">
-                        <input id="consent-checkbox" type="checkbox" name="consent" required />
-                        <span data-uk="Я надаю згоду на обробку своїх персональних даних або інших відомостей про себе на умовах, викладених у ЗГОДІ НА ЗБIР ТА ОБРОБКУ ПЕРСОНАЛЬНИХ ДАНИХ та погоджуюсь з умовами, викладеними у ПОЛІТИЦІ КОНФІДЕНЦІЙНОСТІ ТА ЗАХИСТУ ПЕРСОНАЛЬНИХ ДАНИХ"
-                                data-en="I consent to the processing of my personal data as outlined in the CONSENT FOR DATA COLLECTION and agree to the PRIVACY POLICY.">
-                            Я надаю згоду на обробку своїх персональних даних або інших відомостей про себе на умовах, викладених у ЗГОДІ НА ЗБIР ТА ОБРОБКУ ПЕРСОНАЛЬНИХ ДАНИХ та погоджуюсь з умовами, викладеними у ПОЛІТИЦІ КОНФІДЕНЦІЙНОСТІ ТА ЗАХИСТУ ПЕРСОНАЛЬНИХ ДАНИХ
-                        </span>
-                    </label>
-                        <button type="submit"
-                            data-uk="Подати заявку"
-                            data-en="Submit Application"
-                            data-uk-success="Заявка відправлена ✓"
-                            data-en-success="Application sent ✓">
-                        Подати заявку
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-    <div class="modal" id="modal3" role="dialog" aria-modal="true">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <form id="join-form" action="https://formspree.io/f/mzzggwdz" method="POST">
-                <div class="form-board">
-                    <img src="./src/image/header/logo.svg" alt="АМСБ logo" class="form-board__logo" />
-                    <h2 data-uk="Приєднатися до АМСБ" data-en="Join ASMB">Приєднатися до АМСБ</h2>
-                    <div class="form-board__radio-group">
-                        <div class="radio-cont">
-                            <input id="radio1" value="manager" type="radio" name="type" class="radio-manager" required/>
-                            <label for="radio1" class="radio-cont__text">
-                                <span class="form-board__cont-condition"
-                                        data-uk="Я найманий менеджер"
-                                        data-en="I am a hired manager">
-                                    Я найманий менеджер
-                                </span>
-                                <span data-uk="(готовий отримувати розсилку з цікавими матеріалами від АМСБ)"
-                                        data-en="(willing to receive useful updates from ASMB)">
-                                    (готовий отримувати розсилку з цікавими матеріалами від АМСБ)
-                                </span>
-                            </label>
-                        </div>
-                        <div class="radio-cont">
-                            <input id="radio2" value="owner" type="radio" name="type" class="radio-owner" />
-                            <label for="radio2" class="radio-cont__text">
-                                <span class="form-board__cont-condition"
-                                        data-uk="Я власник бізнесу"
-                                        data-en="I am a business owner">
-                                    Я власник бізнесу
-                                </span>
-                                <span data-uk="(зацікавлений у вступі до АМСБ і у мене є команда)"
-                                        data-en="(interested in joining the ASMB and I have a team)">
-                                    (зацікавлений у вступі до АМСБ і у мене є команда)
-                                </span>
-                            </label>
-                        </div>
-                    </div>
-                    <input id="name-input" type="text" autocomplete="name" name="name" placeholder="Ім’я та прізвище"
-                        data-uk-placeholder="Ім’я та прізвище"
-                        data-en-placeholder="Full Name" required />
-
-                    <input id="phone-input" type="tel" autocomplete="tel" name="phone" placeholder="Телефон"
-                        data-uk-placeholder="Телефон"
-                        data-en-placeholder="Phone Number" required />
-                    <select name="messenger" autocomplete="off" required>
-                        <option value="" disabled selected data-uk="Зручний месенджер для комунікації" data-en="Preferred messenger for communication">
-                            Зручний месенджер для комунікації
-                        </option>
-                        <option value="Telegram">Telegram</option>
-                        <option value="Viber">Viber</option>
-                        <option value="WhatsApp">WhatsApp</option>
-                    </select>
-                    <div class="employees-wrapper" style="display: none;">
-                        <select name="employees" autocomplete="off" required>
-                            <option disabled selected data-uk="Кількість найманих працівників" data-en="Number of employees">Кількість найманих працівників</option>
-                            <option value="1-9">1–9</option>
-                            <option value="10-50">10-50</option>
-                            <option value="50-100">50-100</option>
-                            <option value="100+">100+</option>
-                        </select>
-                    </div>
-                    <input id="email-input" type="email" autocomplete="email" name="email" placeholder="Email"
-                        data-en-placeholder="Email" required />
-
-                    <input id="company-input" type="text" name="company" autocomplete="organization" placeholder="Назва компанії"
-                        data-uk-placeholder="Назва компанії"
-                        data-en-placeholder="Company Name" required />
-
-                    <input id="city-input" type="text" name="city" autocomplete="address-level2" placeholder="Місто"
-                        data-uk-placeholder="Місто"
-                        data-en-placeholder="City" required/>
-
-                    <label class="form-board__checkbox">
-                        <input id="consent-checkbox" type="checkbox" name="consent" required />
-                        <span data-uk="Я надаю згоду на обробку своїх персональних даних або інших відомостей про себе на умовах, викладених у ЗГОДІ НА ЗБIР ТА ОБРОБКУ ПЕРСОНАЛЬНИХ ДАНИХ та погоджуюсь з умовами, викладеними у ПОЛІТИЦІ КОНФІДЕНЦІЙНОСТІ ТА ЗАХИСТУ ПЕРСОНАЛЬНИХ ДАНИХ"
-                                data-en="I consent to the processing of my personal data as outlined in the CONSENT FOR DATA COLLECTION and agree to the PRIVACY POLICY.">
-                            Я надаю згоду на обробку своїх персональних даних або інших відомостей про себе на умовах, викладених у ЗГОДІ НА ЗБIР ТА ОБРОБКУ ПЕРСОНАЛЬНИХ ДАНИХ та погоджуюсь з умовами, викладеними у ПОЛІТИЦІ КОНФІДЕНЦІЙНОСТІ ТА ЗАХИСТУ ПЕРСОНАЛЬНИХ ДАНИХ
-                        </span>
-                    </label>
-                        <button type="submit"
-                            data-uk="Подати заявку"
-                            data-en="Submit Application"
-                            data-uk-success="Заявка відправлена ✓"
-                            data-en-success="Application sent ✓">
-                        Подати заявку
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-    <div class="modal" id="modal4" role="dialog" aria-modal="true">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <form id="join-form" action="https://formspree.io/f/mzzggwdz" method="POST">
-                <div class="form-board">
-                    <img src="./src/image/header/logo.svg" alt="АМСБ logo" class="form-board__logo" />
-                    <h2 data-uk="Приєднатися до АМСБ" data-en="Join ASMB">Приєднатися до АМСБ</h2>
-                    <div class="form-board__radio-group">
-                        <div class="radio-cont">
-                            <input id="radio1" value="manager" type="radio" name="type" class="radio-manager" required/>
-                            <label for="radio1" class="radio-cont__text">
-                                <span class="form-board__cont-condition"
-                                        data-uk="Я найманий менеджер"
-                                        data-en="I am a hired manager">
-                                    Я найманий менеджер
-                                </span>
-                                <span data-uk="(готовий отримувати розсилку з цікавими матеріалами від АМСБ)"
-                                        data-en="(willing to receive useful updates from ASMB)">
-                                    (готовий отримувати розсилку з цікавими матеріалами від АМСБ)
-                                </span>
-                            </label>
-                        </div>
-                        <div class="radio-cont">
-                            <input id="radio2" value="owner" type="radio" name="type" class="radio-owner" />
-                            <label for="radio2" class="radio-cont__text">
-                                <span class="form-board__cont-condition"
-                                        data-uk="Я власник бізнесу"
-                                        data-en="I am a business owner">
-                                    Я власник бізнесу
-                                </span>
-                                <span data-uk="(зацікавлений у вступі до АМСБ і у мене є команда)"
-                                        data-en="(interested in joining the ASMB and I have a team)">
-                                    (зацікавлений у вступі до АМСБ і у мене є команда)
-                                </span>
-                            </label>
-                        </div>
-                    </div>
-                    <input id="name-input" type="text" autocomplete="name" name="name" placeholder="Ім’я та прізвище"
-                        data-uk-placeholder="Ім’я та прізвище"
-                        data-en-placeholder="Full Name" required />
-
-                    <input id="phone-input" type="tel" autocomplete="tel" name="phone" placeholder="Телефон"
-                        data-uk-placeholder="Телефон"
-                        data-en-placeholder="Phone Number" required />
-                    <select name="messenger" autocomplete="off" required>
-                        <option value="" disabled selected data-uk="Зручний месенджер для комунікації" data-en="Preferred messenger for communication">
-                            Зручний месенджер для комунікації
-                        </option>
-                        <option value="Telegram">Telegram</option>
-                        <option value="Viber">Viber</option>
-                        <option value="WhatsApp">WhatsApp</option>
-                    </select>
-                    <div class="employees-wrapper" style="display: none;">
-                        <select name="employees" autocomplete="off" required>
-                            <option disabled selected data-uk="Кількість найманих працівників" data-en="Number of employees">Кількість найманих працівників</option>
-                            <option value="1-9">1–9</option>
-                            <option value="10-50">10-50</option>
-                            <option value="50-100">50-100</option>
-                            <option value="100+">100+</option>
-                        </select>
-                    </div>
-                    <input id="email-input" type="email" autocomplete="email" name="email" placeholder="Email"
-                        data-en-placeholder="Email" required />
-
-                    <input id="company-input" type="text" name="company" autocomplete="organization" placeholder="Назва компанії"
-                        data-uk-placeholder="Назва компанії"
-                        data-en-placeholder="Company Name" required />
-
-                    <input id="city-input" type="text" name="city" autocomplete="address-level2" placeholder="Місто"
-                        data-uk-placeholder="Місто"
-                        data-en-placeholder="City" required/>
-
-                    <label class="form-board__checkbox">
-                        <input id="consent-checkbox" type="checkbox" name="consent" required />
-                        <span data-uk="Я надаю згоду на обробку своїх персональних даних або інших відомостей про себе на умовах, викладених у ЗГОДІ НА ЗБIР ТА ОБРОБКУ ПЕРСОНАЛЬНИХ ДАНИХ та погоджуюсь з умовами, викладеними у ПОЛІТИЦІ КОНФІДЕНЦІЙНОСТІ ТА ЗАХИСТУ ПЕРСОНАЛЬНИХ ДАНИХ"
-                                data-en="I consent to the processing of my personal data as outlined in the CONSENT FOR DATA COLLECTION and agree to the PRIVACY POLICY.">
-                            Я надаю згоду на обробку своїх персональних даних або інших відомостей про себе на умовах, викладених у ЗГОДІ НА ЗБIР ТА ОБРОБКУ ПЕРСОНАЛЬНИХ ДАНИХ та погоджуюсь з умовами, викладеними у ПОЛІТИЦІ КОНФІДЕНЦІЙНОСТІ ТА ЗАХИСТУ ПЕРСОНАЛЬНИХ ДАНИХ
-                        </span>
-                    </label>
-                        <button type="submit"
-                            data-uk="Подати заявку"
-                            data-en="Submit Application"
-                            data-uk-success="Заявка відправлена ✓"
-                            data-en-success="Application sent ✓">
-                        Подати заявку
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-    <div class="modal" id="modal5" role="dialog" aria-modal="true">
-        <div class="modal-content">
-           <span class="close">&times;</span>
             <form id="join-form" action="https://formspree.io/f/mzzggwdz" method="POST">
                 <div class="form-board">
                     <img src="./src/image/header/logo.svg" alt="АМСБ logo" class="form-board__logo" />
@@ -1854,10 +1509,11 @@
     </div>
 
     <!-- Scripts -->
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/validator@13.11.0/validator.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/intlTelInput.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/utils.js"></script>
-    <script type="module" src="./src/js/main.js"></script>
+    <script type="module" src="./src/js/main.min.js"></script>
 </body>
 </html>

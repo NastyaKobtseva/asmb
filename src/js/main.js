@@ -12,6 +12,69 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 200);
   }
 });
+// tsParticles 
+particlesJS("particles-mission", {
+  "particles": {
+    "number": {
+      "value": 60,
+      "density": {
+        "enable": true,
+        "value_area": 800
+      }
+    },
+    "color": { "value": "#ffffff" },
+    "shape": {
+      "type": "circle"
+    },
+    "opacity": {
+      "value": 0.5
+    },
+    "size": {
+      "value": 2
+    },
+    "line_linked": {
+      "enable": true,
+      "distance": 120,
+      "color": "#ffffff",
+      "opacity": 0.8,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 1.5
+    }
+  },
+  "interactivity": {
+    "detect_on": "window", 
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "grab"
+      },
+      "onclick": {
+        "enable": true,
+        "mode": "push"
+      },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 140,
+        "line_linked": {
+          "opacity": 1
+        }
+      },
+      "push": {
+        "particles_nb": 4
+      },
+      "repulse": {
+        "distance": 100,
+        "duration": 0.4
+      }
+    }
+  },
+  "retina_detect": true
+});
 // burger menu
 const menu = document.querySelector(".navigation");
 const menuItems = document.querySelectorAll(".menu__link");
@@ -673,34 +736,38 @@ function step() {
 step();
 
 // animation
-const sections = document.querySelectorAll("section");
-
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
-    });
-  },
-  {
-    threshold: 0.1,
-  }
-);
-
-sections.forEach((section, index) => {
-  if (!section.closest("header") && !section.closest("footer")) {
-    section.classList.add("section-animate");
-
-    if (index === 0) {
-      setTimeout(() => {
-        section.classList.add("first-visible");
-      }, 200);
-    } else {
-      observer.observe(section);
-    }
-  }
+AOS.init({
+  duration: 1200,
+  once: true,   
 });
+// const sections = document.querySelectorAll("section");
+
+// const observer = new IntersectionObserver(
+//   (entries) => {
+//     entries.forEach((entry) => {
+//       if (entry.isIntersecting) {
+//         entry.target.classList.add("visible");
+//       }
+//     });
+//   },
+//   {
+//     threshold: 0.1,
+//   }
+// );
+
+// sections.forEach((section, index) => {
+//   if (!section.closest("header") && !section.closest("footer")) {
+//     section.classList.add("section-animate");
+
+//     if (index === 0) {
+//       setTimeout(() => {
+//         section.classList.add("first-visible");
+//       }, 200);
+//     } else {
+//       observer.observe(section);
+//     }
+//   }
+// });
 
 // timer
 document.addEventListener("DOMContentLoaded", () => {

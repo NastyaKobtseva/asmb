@@ -47,28 +47,31 @@ a {
 }
 
 
-
-.section-animate {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+#particles-mission {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    pointer-events: none; 
 }
-.section-animate.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.first-visible {
-  opacity: 0;
-  transform: translateY(40px);
-  animation: fadeInUp 0.8s ease forwards;
-  animation-delay: 0.3s;
-}
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+@media (max-width: 1024px) {
+  #particles-mission {
+    display: none; 
   }
 }
+
+// .section-animate {
+//   opacity: 0;
+//   transform: translateY(50px);
+//   transition: opacity 0.6s ease, transform 0.6s ease;
+// }
+// .section-animate.visible {
+//   opacity: 1;
+//   transform: translateY(0);
+// }
 
 
 
